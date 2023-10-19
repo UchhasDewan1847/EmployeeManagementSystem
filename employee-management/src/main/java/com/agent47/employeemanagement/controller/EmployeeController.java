@@ -2,6 +2,7 @@ package com.agent47.employeemanagement.controller;
 
 import com.agent47.employeemanagement.entity.Employee;
 import com.agent47.employeemanagement.service.EmployeeService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +14,7 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
     @PostMapping("/employee")
-    public Employee saveEmployee(@RequestBody Employee employee){
+    public Employee saveEmployee(@Valid @RequestBody Employee employee){
         return employeeService.saveEmployee(employee);
     }
     @GetMapping("/employee")

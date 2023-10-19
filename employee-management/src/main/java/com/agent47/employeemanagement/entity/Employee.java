@@ -1,6 +1,7 @@
 package com.agent47.employeemanagement.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,5 +26,6 @@ public class Employee {
     private Long employeeId;
     private String firstName;
     private String lastName;
+    @NotBlank
     private String email;
 }
